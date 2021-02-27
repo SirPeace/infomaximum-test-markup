@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proceset - Вход</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body class="registration-page">
+    <div class="registration-page__container">
+      <div class="logo"></div>
+      <div class="paper">
+        <div class="paper__container">
+          <form action="#" method="POST" class="registration-page__form">
+            <input type="email" class="input" placeholder="Электронная почта" />
+            <div class="password-input">
+              <input
+                type="password"
+                id="password_input"
+                class="input"
+                placeholder="Пароль"
+              />
+              <i class="password-input__eye closed"></i>
+            </div>
+            <button class="button" type="submit">Войти в систему</button>
+          </form>
+
+          <a href="/sign-up.html">Зарегистрироваться</a>
+          <br />
+          <a href="/dashboard.html">Перейти в dashboard</a>
+        </div>
+
+        <div class="alert alert-danger" id="alert">Сообщение об ошибке</div>
+      </div>
+    </div>
+
+    <script>
+      const passInput = document.querySelector("#password_input")
+      const eye = passInput.nextElementSibling
+      eye.addEventListener("click", evt => {
+        passInput.type = passInput.type === "password" ? "text" : "password"
+        eye.classList.toggle("closed")
+      })
+
+      const alert = document.querySelector("#alert")
+      const submitButton = document.forms[0].querySelector(
+        "button[type='submit']"
+      )
+      document.forms[0].addEventListener("submit", evt => {
+        evt.preventDefault()
+        submitButton.disabled = true
+        alert.classList.toggle("alert-display")
+      })
+    </script>
+  </body>
+</html>

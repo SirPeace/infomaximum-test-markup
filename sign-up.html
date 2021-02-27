@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proceset - Регистрация</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body class="sign-up-page">
+    <div class="sign-up-page__container">
+      <div class="logo"></div>
+      <div class="paper">
+        <div class="paper__container">
+          <h3>Регистрация</h3>
+          <form action="#" method="POST" class="sign-up-page__form">
+            <input type="text" class="input" placeholder="Имя" />
+            <input type="text" class="input" placeholder="Фамилия" />
+            <input type="email" class="input" placeholder="Электронная почта" />
+            <div class="password-input">
+              <input
+                type="password"
+                id="password_input"
+                class="input"
+                placeholder="Введите пароль"
+              />
+              <i class="password-input__eye closed"></i>
+            </div>
+            <div class="password-input">
+              <input
+                type="password"
+                id="password_input_confirm"
+                class="input"
+                placeholder="Повторите пароль"
+              />
+              <i class="password-input__eye closed"></i>
+            </div>
+            <button class="button" type="submit">Применить и войти</button>
+          </form>
+          <p>Уже зарегистрированы?&nbsp;<a href="/login.html">Вход</a></p>
+        </div>
+
+        <div class="alert alert-danger" id="alert">Сообщение об ошибке</div>
+      </div>
+    </div>
+
+    <script>
+      const passInput = document.querySelector("#password_input")
+      const passInputConfirm = document.querySelector("#password_input_confirm")
+      const eye = passInput.nextElementSibling
+      const eyeConfirm = passInputConfirm.nextElementSibling
+      eye.addEventListener("click", evt => {
+        passInput.type = passInput.type === "password" ? "text" : "password"
+        eye.classList.toggle("closed")
+      })
+      eyeConfirm.addEventListener("click", evt => {
+        passInputConfirm.type =
+          passInputConfirm.type === "password" ? "text" : "password"
+        eyeConfirm.classList.toggle("closed")
+      })
+
+      const alert = document.querySelector("#alert")
+      const submitButton = document.forms[0].querySelector(
+        "button[type='submit']"
+      )
+      document.forms[0].addEventListener("submit", evt => {
+        submitButton.disabled = true
+        alert.classList.toggle("alert-display")
+        evt.preventDefault()
+      })
+
+      const inputs = document.forms[0].querySelectorAll("input")
+      for (let input of inputs) {
+        input.addEventListener("change", evt => {
+          for (let input of inputs) {
+            if (input.value.trim().length === 0) {
+              submitButton.disabled = true
+              break
+            } else {
+              submitButton.disabled = false
+            }
+          }
+        })
+
+        if (input.value.trim().length === 0) {
+          submitButton.disabled = true
+        }
+      }
+    </script>
+  </body>
+</html>

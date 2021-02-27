@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proceset - Профиль</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div class="profile-page">
+      <div class="backdrop"></div>
+      <div class="app-drawer">
+        <div class="app-drawer__head">
+          <button class="drawer-button drawer-button_dark"></button>
+          <i class="app-drawer__logo"></i>
+        </div>
+        <nav class="app-drawer__navigation">
+          <ul>
+            <li class="app-drawer__profile-link" onclick="closeDrawer()">
+              <a href="#">Nickname</a>
+            </li>
+            <li class="app-drawer__processes-link">
+              <a href="dashboard.html">Список процессов</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <header class="app-bar">
+        <button class="drawer-button"></button>
+        <nav class="app-bar__nav">
+          <a href="#" class="app-bar__nav-link" onclick="openDrawer()">Меню</a>
+        </nav>
+      </header>
+
+      <main>
+        <div class="profile-page__head">
+          <h1>Борис Годунов. Редактирование</h1>
+          <button class="button" onclick="submitForm()">Сохранить</button>
+        </div>
+        <div class="paper">
+          <form action="#" method="GET" onsubmit="preventDefault()">
+            <div class="profile-page__form-control">
+              <label for="name">Имя</label>
+              <input type="text" class="input" id="name" value="Борис" />
+            </div>
+            <div class="profile-page__form-control">
+              <label for="surname">Фамилия</label>
+              <input type="text" class="input" id="surname" value="Годунов" />
+            </div>
+            <div class="profile-page__form-control">
+              <label for="email">Электронная почта</label>
+              <input
+                type="email"
+                class="input"
+                id="email"
+                value="qwerty@yandex.ru"
+              />
+            </div>
+            <div class="profile-page__form-control">
+              <label for="password">Новый пароль</label>
+              <div class="password-input">
+                <input
+                  type="password"
+                  id="password"
+                  class="input"
+                  value="∙∙∙∙∙∙∙∙∙"
+                />
+                <i class="password-input__eye closed"></i>
+              </div>
+            </div>
+            <div class="profile-page__form-control">
+              <label for="password-confirm">Повторите пароль</label>
+              <div class="password-input">
+                <input type="password" id="password-confirm" class="input" />
+                <i class="password-input__eye closed"></i>
+              </div>
+            </div>
+          </form>
+        </div>
+      </main>
+
+      <script>
+        const preventDefault = e => e.preventDefault()
+        const submitForm = () => document.forms[0].submit()
+
+        const passInput = document.querySelector("#password")
+        const passInputConfirm = document.querySelector("#password-confirm")
+        const eye = passInput.nextElementSibling
+        const eyeConfirm = passInputConfirm.nextElementSibling
+        eye.addEventListener("click", evt => {
+          passInput.type = passInput.type === "password" ? "text" : "password"
+          eye.classList.toggle("closed")
+        })
+        eyeConfirm.addEventListener("click", evt => {
+          passInputConfirm.type =
+            passInputConfirm.type === "password" ? "text" : "password"
+          eyeConfirm.classList.toggle("closed")
+        })
+
+        const backdrop = document.querySelector(".backdrop")
+        const drawer = document.querySelector(".app-drawer")
+        const drawerOpenButton = document.querySelector(
+          ".app-bar .drawer-button"
+        )
+        const drawerCloseButton = document.querySelector(
+          ".app-drawer .drawer-button"
+        )
+
+        const openDrawer = () => {
+          drawer.classList.add("app-drawer_opened")
+          backdrop.style.display = "block"
+          setTimeout(() => {
+            backdrop.classList.add("backdrop_active")
+          })
+        }
+
+        const closeDrawer = () => {
+          drawer.classList.remove("app-drawer_opened")
+          backdrop.classList.remove("backdrop_active")
+          setTimeout(() => {
+            backdrop.style.display = "none"
+          }, 300)
+        }
+
+        drawerOpenButton.addEventListener("click", openDrawer)
+        drawerCloseButton.addEventListener("click", closeDrawer)
+        backdrop.addEventListener("click", closeDrawer)
+      </script>
+    </div>
+  </body>
+</html>

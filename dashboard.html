@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proceset - Процессы</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div class="dashboard-page">
+      <div class="backdrop"></div>
+      <div class="app-drawer">
+        <div class="app-drawer__head">
+          <button class="drawer-button drawer-button_dark"></button>
+          <i class="app-drawer__logo"></i>
+        </div>
+        <nav class="app-drawer__navigation">
+          <ul>
+            <li class="app-drawer__profile-link">
+              <a href="profile.html">Nickname</a>
+            </li>
+            <li class="app-drawer__processes-link" onclick="closeDrawer()">
+              <a href="#">Список процессов</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <header class="app-bar">
+        <button class="drawer-button"></button>
+        <nav class="app-bar__nav">
+          <a href="#" class="app-bar__nav-link" onclick="openDrawer()">Меню</a>
+        </nav>
+      </header>
+
+      <main>
+        <article class="process-card">
+          <header class="process-card__head">
+            <h3 class="process-card__title">Рассмотрение кредитной заявки</h3>
+            <a href="#" class="process-card__link">На карту процесса</a>
+          </header>
+
+          <hr class="process-card__hr" />
+
+          <div class="process-card__body">
+            <section class="process-card__metric process-card__metric_quantity">
+              <h1 class="process-card__heading_1">340 487</h1>
+              <h5 class="process-card__heading_5">выполнено раз</h5>
+            </section>
+
+            <section
+              class="process-card__metric process-card__metric_execution"
+            >
+              <h3 class="process-card__heading_3">10ч 36 мин</h3>
+              <h5 class="process-card__heading_5">среднее время выполнения</h5>
+            </section>
+            <section
+              class="process-card__metric process-card__metric_active-time"
+            >
+              <h3 class="process-card__heading_3">1ч 7 мин (10,5%)</h3>
+              <h5 class="process-card__heading_5">среднее активное время</h5>
+            </section>
+            <section
+              class="process-card__metric process-card__metric_employees"
+            >
+              <h3 class="process-card__heading_3">120 сотрудников</h3>
+              <h5 class="process-card__heading_5">участвует в процессе</h5>
+            </section>
+            <section
+              class="process-card__metric process-card__metric_scenarios"
+            >
+              <h3 class="process-card__heading_3">129 сценариев</h3>
+              <h5 class="process-card__heading_5">в процессе</h5>
+            </section>
+
+            <section class="process-card__date-grid">
+              <h5 class="process-card__heading_5">Начало</h5>
+              <h5 class="process-card__date process-card__heading_5">
+                11 ноября 2017
+              </h5>
+              <h5 class="process-card__heading_5">Окончание</h5>
+              <h5 class="process-card__date process-card__heading_5">
+                6 января 2018
+              </h5>
+              <h5 class="process-card__heading_5">Загрузка</h5>
+              <h5 class="process-card__date process-card__heading_5">
+                10 января 2018
+              </h5>
+            </section>
+          </div>
+        </article>
+
+        <article class="process-card">
+          <header class="process-card__head">
+            <h3 class="process-card__title">Рассмотрение кредитной заявки</h3>
+            <a href="#" class="process-card__link">На карту процесса</a>
+          </header>
+
+          <hr class="process-card__hr" />
+
+          <div class="process-card__body">
+            <section class="process-card__metric process-card__metric_quantity">
+              <h1 class="process-card__heading_1">340 487</h1>
+              <h5 class="process-card__heading_5">выполнено раз</h5>
+            </section>
+
+            <section
+              class="process-card__metric process-card__metric_execution"
+            >
+              <h3 class="process-card__heading_3">10ч 36 мин</h3>
+              <h5 class="process-card__heading_5">среднее время выполнения</h5>
+            </section>
+            <section
+              class="process-card__metric process-card__metric_active-time"
+            >
+              <h3 class="process-card__heading_3">1ч 7 мин (10,5%)</h3>
+              <h5 class="process-card__heading_5">среднее активное время</h5>
+            </section>
+            <section
+              class="process-card__metric process-card__metric_employees"
+            >
+              <h3 class="process-card__heading_3">120 сотрудников</h3>
+              <h5 class="process-card__heading_5">участвует в процессе</h5>
+            </section>
+            <section
+              class="process-card__metric process-card__metric_scenarios"
+            >
+              <h3 class="process-card__heading_3">129 сценариев</h3>
+              <h5 class="process-card__heading_5">в процессе</h5>
+            </section>
+
+            <section class="process-card__date-grid">
+              <h5 class="process-card__heading_5">Начало</h5>
+              <h5 class="process-card__date process-card__heading_5">
+                11 ноября 2017
+              </h5>
+              <h5 class="process-card__heading_5">Окончание</h5>
+              <h5 class="process-card__date process-card__heading_5">
+                6 января 2018
+              </h5>
+              <h5 class="process-card__heading_5">Загрузка</h5>
+              <h5 class="process-card__date process-card__heading_5">
+                10 января 2018
+              </h5>
+            </section>
+          </div>
+        </article>
+
+        <article class="process-card">
+          <header class="process-card__head">
+            <h3 class="process-card__title">Рассмотрение кредитной заявки</h3>
+            <a href="#" class="process-card__link">На карту процесса</a>
+          </header>
+
+          <hr class="process-card__hr" />
+
+          <div class="process-card__body">
+            <section class="process-card__metric process-card__metric_quantity">
+              <h1 class="process-card__heading_1">340 487</h1>
+              <h5 class="process-card__heading_5">выполнено раз</h5>
+            </section>
+
+            <section
+              class="process-card__metric process-card__metric_execution"
+            >
+              <h3 class="process-card__heading_3">10ч 36 мин</h3>
+              <h5 class="process-card__heading_5">среднее время выполнения</h5>
+            </section>
+            <section
+              class="process-card__metric process-card__metric_active-time"
+            >
+              <h3 class="process-card__heading_3">1ч 7 мин (10,5%)</h3>
+              <h5 class="process-card__heading_5">среднее активное время</h5>
+            </section>
+            <section
+              class="process-card__metric process-card__metric_employees"
+            >
+              <h3 class="process-card__heading_3">120 сотрудников</h3>
+              <h5 class="process-card__heading_5">участвует в процессе</h5>
+            </section>
+            <section
+              class="process-card__metric process-card__metric_scenarios"
+            >
+              <h3 class="process-card__heading_3">129 сценариев</h3>
+              <h5 class="process-card__heading_5">в процессе</h5>
+            </section>
+
+            <section class="process-card__date-grid">
+              <h5 class="process-card__heading_5">Начало</h5>
+              <h5 class="process-card__date process-card__heading_5">
+                11 ноября 2017
+              </h5>
+              <h5 class="process-card__heading_5">Окончание</h5>
+              <h5 class="process-card__date process-card__heading_5">
+                6 января 2018
+              </h5>
+              <h5 class="process-card__heading_5">Загрузка</h5>
+              <h5 class="process-card__date process-card__heading_5">
+                10 января 2018
+              </h5>
+            </section>
+          </div>
+        </article>
+
+        <article class="process-card">
+          <header class="process-card__head">
+            <h3 class="process-card__title">Рассмотрение кредитной заявки</h3>
+            <a href="#" class="process-card__link">На карту процесса</a>
+          </header>
+
+          <hr class="process-card__hr" />
+
+          <div class="process-card__body">
+            <section class="process-card__metric process-card__metric_quantity">
+              <h1 class="process-card__heading_1">340 487</h1>
+              <h5 class="process-card__heading_5">выполнено раз</h5>
+            </section>
+
+            <section
+              class="process-card__metric process-card__metric_execution"
+            >
+              <h3 class="process-card__heading_3">10ч 36 мин</h3>
+              <h5 class="process-card__heading_5">среднее время выполнения</h5>
+            </section>
+            <section
+              class="process-card__metric process-card__metric_active-time"
+            >
+              <h3 class="process-card__heading_3">1ч 7 мин (10,5%)</h3>
+              <h5 class="process-card__heading_5">среднее активное время</h5>
+            </section>
+            <section
+              class="process-card__metric process-card__metric_employees"
+            >
+              <h3 class="process-card__heading_3">120 сотрудников</h3>
+              <h5 class="process-card__heading_5">участвует в процессе</h5>
+            </section>
+            <section
+              class="process-card__metric process-card__metric_scenarios"
+            >
+              <h3 class="process-card__heading_3">129 сценариев</h3>
+              <h5 class="process-card__heading_5">в процессе</h5>
+            </section>
+
+            <section class="process-card__date-grid">
+              <h5 class="process-card__heading_5">Начало</h5>
+              <h5 class="process-card__date process-card__heading_5">
+                11 ноября 2017
+              </h5>
+              <h5 class="process-card__heading_5">Окончание</h5>
+              <h5 class="process-card__date process-card__heading_5">
+                6 января 2018
+              </h5>
+              <h5 class="process-card__heading_5">Загрузка</h5>
+              <h5 class="process-card__date process-card__heading_5">
+                10 января 2018
+              </h5>
+            </section>
+          </div>
+        </article>
+
+        <article class="process-card">
+          <header class="process-card__head">
+            <h3 class="process-card__title">Рассмотрение кредитной заявки</h3>
+            <a href="#" class="process-card__link">На карту процесса</a>
+          </header>
+
+          <hr class="process-card__hr" />
+
+          <div class="process-card__body">
+            <section class="process-card__metric process-card__metric_quantity">
+              <h1 class="process-card__heading_1">340 487</h1>
+              <h5 class="process-card__heading_5">выполнено раз</h5>
+            </section>
+
+            <section
+              class="process-card__metric process-card__metric_execution"
+            >
+              <h3 class="process-card__heading_3">10ч 36 мин</h3>
+              <h5 class="process-card__heading_5">среднее время выполнения</h5>
+            </section>
+            <section
+              class="process-card__metric process-card__metric_active-time"
+            >
+              <h3 class="process-card__heading_3">1ч 7 мин (10,5%)</h3>
+              <h5 class="process-card__heading_5">среднее активное время</h5>
+            </section>
+            <section
+              class="process-card__metric process-card__metric_employees"
+            >
+              <h3 class="process-card__heading_3">120 сотрудников</h3>
+              <h5 class="process-card__heading_5">участвует в процессе</h5>
+            </section>
+            <section
+              class="process-card__metric process-card__metric_scenarios"
+            >
+              <h3 class="process-card__heading_3">129 сценариев</h3>
+              <h5 class="process-card__heading_5">в процессе</h5>
+            </section>
+
+            <section class="process-card__date-grid">
+              <h5 class="process-card__heading_5">Начало</h5>
+              <h5 class="process-card__date process-card__heading_5">
+                11 ноября 2017
+              </h5>
+              <h5 class="process-card__heading_5">Окончание</h5>
+              <h5 class="process-card__date process-card__heading_5">
+                6 января 2018
+              </h5>
+              <h5 class="process-card__heading_5">Загрузка</h5>
+              <h5 class="process-card__date process-card__heading_5">
+                10 января 2018
+              </h5>
+            </section>
+          </div>
+        </article>
+      </main>
+
+      <script>
+        const backdrop = document.querySelector(".backdrop")
+        const drawer = document.querySelector(".app-drawer")
+        const drawerOpenButton = document.querySelector(
+          ".app-bar .drawer-button"
+        )
+        const drawerCloseButton = document.querySelector(
+          ".app-drawer .drawer-button"
+        )
+
+        const openDrawer = () => {
+          drawer.classList.add("app-drawer_opened")
+          backdrop.style.display = "block"
+          setTimeout(() => {
+            backdrop.classList.add("backdrop_active")
+          })
+        }
+
+        const closeDrawer = () => {
+          drawer.classList.remove("app-drawer_opened")
+          backdrop.classList.remove("backdrop_active")
+          setTimeout(() => {
+            backdrop.style.display = "none"
+          }, 300)
+        }
+
+        drawerOpenButton.addEventListener("click", openDrawer)
+        drawerCloseButton.addEventListener("click", closeDrawer)
+        backdrop.addEventListener("click", closeDrawer)
+      </script>
+    </div>
+  </body>
+</html>
